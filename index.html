@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Spoilage Programming Team Meeting 1</title>
+
+        <meta charset="UTF-8">
+        <meta name="author" content="Nathan Scott">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" type="image/png" href="/images/favicon.png">
+    </head>
+
+    <body>
+        <header>
+            <h1>Spoilage Programming Team Meeting 1</h1>
+            <h3>Topic: Sprint Retro and Planning</h3>
+            <h3>Date: April 11, 2026</h3>
+
+            <nav>
+                <a href="#section-attendance">Attendance</a> | 
+                <a href="#section-agenda">Agenda</a> | 
+                <a href="#section-old-business">Old Business</a> | 
+                <a href="#section-new-business">New Business</a> | 
+                <a href="#section-other-comments">Other Comments</a> | 
+                <a href="#section-media">Media</a> | 
+                <a href="#section-survey">Survey</a>
+            </nav>
+        </header>
+
+        <hr>
+
+        <main>
+            <section>
+                <h2 id="section-attendance">Attendance</h2>
+
+                <p><b>Programming Leads:</b> Jonathan R., Nathan S.</p>
+                <p><b>Subteam Leads:</b> Calista H., Abdulaziz K., Nathan R., Kunal S., Bree T.</p>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 id="section-agenda">Agenda</h2>
+
+                <ol>
+                    <li>Announce Subteam Leads to general members.</li>
+                    <li>Split into subteams and complete icebreaker activity.</li>
+                    <li>Assign sprint 1 tasks.</li>
+                </ol>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 id="section-old-business">Old Business</h2>
+                
+                <details>
+                    <summary><h3>Sprint 0 Retro Discussion</h3></summary>
+                    <ul>
+                        <li>What went well:
+                            <ul>
+                                <li>Team onboarding was smooth.</li>
+                                <li>Development environment setup was quick for most members.</li>
+                            </ul>
+                        </li>
+                        <li>What could be improved:
+                            <ul>
+                                <li>Communication could have been more frequent. <em>(A recurring theme)</em></li>
+                                <li>Members could have been given a clearer introduction to using Taiga.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 id="section-new-business">New Business</h2>
+
+                <div>
+                    <h3>Sprint 1 Task Assignments</h3>
+                    <p>Tasks for the upcoming sprint <span>(sprint 1)</span> have been assigned on Taiga.</p>
+                    <p><strong>All team members must accept their assigned tasks by end-of-day tomorrow.</strong></p>
+                    <p>The sprint goal is to have a functional prototype.</p>
+                </div>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 id="section-other-comments">Other Comments</h2>
+
+                <p>Jonathan: <i>"Just a reminder to follow the coding style guide."</i></p>
+                <p>Nathan: "I've added some design mockups to the shared drive."<br>
+                "Let me know if you have any questions."</p>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 id="section-media">Media</h2>
+
+                <h3>Sprint 1 Taiga Taskboard:</h3>
+                <img src="/media/sprint1-taiga-taskboard.png" alt="Miscellaneous tasks">
+
+                <h3>Game Theme Sketch:</h3>
+                <audio controls src="/media/theme-sketch.m4a">Your browser does not support the audio element.</audio>
+
+                <h3>Screen recording of new demo:</h3>
+                <video controls width="800" src="/media/product-demo.mp4">Your browser does not support the video element.</video>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 id="section-survey">Survey</h2>
+                <form action="/submit-survey" method="post">
+                    <fieldset>
+                        <legend>Meeting Feedback</legend>
+
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" list="attendees"><br><br>
+
+                        <datalist id="attendees">
+                            <option value="Jonathan R."></option>
+                            <option value="Nathan S."></option>
+                            <option value="Calista H."></option>
+                            <option value="Abdulaziz K."></option>
+                            <option value="Nathan R."></option>
+                            <option value="Kunal S."></option>
+                            <option value="Bree T."></option>
+                        </datalist>
+
+                        <label for="rating">How would you rate this meeting?</label>
+                        <select id="rating" name="rating">
+                            <option value="5">Excellent</option>
+                            <option value="4">Good</option>
+                            <option value="3">Average</option>
+                            <option value="2">Poor</option>
+                            <option value="1">Very Poor</option>
+                        </select><br><br>
+
+                        <label for="next-availability">Date of next availability:</label>
+                        <input type="date" id="next-availability" name="next-availability"><br><br>
+
+                        <p>Was the meeting length appropriate?</p>
+                        <input type="radio" id="length-good" name="meeting-length" value="good">
+                        <label for="length-good">Yes, it was just right.</label><br>
+                        <input type="radio" id="length-long" name="meeting-length" value="long">
+                        <label for="length-long">It was too long.</label><br>
+                        <input type="radio" id="length-short" name="meeting-length" value="short">
+                        <label for="length-short">It was too short.</label><br><br>
+
+                        <p>Which topics were most useful? (Check all that apply)</p>
+                        <input type="checkbox" id="topic-retro" name="useful-topics" value="retro">
+                        <label for="topic-retro">Sprint 0 Retro</label><br>
+                        <input type="checkbox" id="topic-planning" name="useful-topics" value="planning">
+                        <label for="topic-planning">Sprint 1 Planning</label><br>
+                        <input type="checkbox" id="topic-tasks" name="useful-topics" value="tasks">
+                        <label for="topic-tasks">Task Assignments</label><br><br>
+
+                        <label for="comments">Additional Comments:</label><br>
+                        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+                        <button type="submit">Submit Feedback</button>
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+
+        <hr>
+
+        <footer>
+            <p>Nathan Scott | A18272914 | CSE110 SP26</p>
+        </footer>
+    </body>
+</html>
