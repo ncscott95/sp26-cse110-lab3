@@ -1,3 +1,3 @@
-# Lab 2 - Nathan Scott
+# Lab 3 - Nathan Scott
 
-https://ncscott95.github.io/CSE110-Lab2/
+https://ncscott95.github.io/sp26-cse110-lab3/
