@@ -56,18 +56,19 @@ nav {
 	align-items: center;
 	gap: 0.5rem;
 	margin-top: 0.7rem;
-}
 
-nav a {
-	display: inline-block;
-	color: var(--brand-accent);
-	text-decoration: none;
-	padding: 0.45rem 0.7rem;
-	border-style: solid;
-	border-width: 1px;
-	border-color: rgba(38, 80, 195, 0.3);
-	border-radius: 999px;
-	background-color: var(--soft-highlight);
+    /* Nested selectors: anchor inside the nav */
+	& a {
+		display: inline-block;
+		color: var(--brand-accent);
+		text-decoration: none;
+		padding: 0.45rem 0.7rem;
+		border-style: solid;
+		border-width: 1px;
+		border-color: rgba(38, 80, 195, 0.3);
+		border-radius: 999px;
+		background-color: var(--soft-highlight);
+	}
 }
 
 nav a:hover {
@@ -92,16 +93,32 @@ main {
 	border-radius: 1rem;
 }
 
+/* Offset in-page anchors so sticky header does not cover the jumped-to heading. */
+h2[id] {
+	scroll-margin-top: 10rem;
+}
+
+#section-media {
+	background-color: #ccd2e2;
+}
+
 section {
 	margin: 1rem 0;
 	padding: 0.85rem 0.9rem;
-	background-color: #fff;
 }
 
 section h2 {
 	color: rgb(28, 49, 94);
 	text-align: left;
 	margin-top: 0;
+}
+
+section:has(audio),
+section:has(video) {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #d7e1f3;
+	border-radius: 0.85rem;
 }
 
 p {
@@ -168,7 +185,8 @@ button {
 	font-size: 11pt;
 }
 
-input:not([type='radio']):not([type='checkbox']),
+input[type='text'],
+input[type='date'],
 select,
 textarea {
 	width: 100%;
@@ -205,10 +223,13 @@ textarea {
 	background-color: #f9fbff;
 }
 
-.form-group-title {
+/* Combined selector: paragraph with class form-group-title */
+p.form-group-title {
 	margin: 0 0 0.2rem;
 	font-weight: 600;
 	color: #1c315e;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
 }
 
 .choice {
@@ -228,6 +249,16 @@ textarea {
 	justify-content: flex-start;
 }
 
+/* Adjacent sibling selector: tighten spacing after headings in content sections. */
+section h3 + p {
+	margin-top: 0.2rem;
+}
+
+/* General sibling selector: keep later paragraphs in a section slightly tighter. */
+section h3 ~ p {
+	margin-bottom: 0.55rem;
+}
+
 footer p {
 	margin-top: 0.25rem;
 	margin-right: 0.5rem;
@@ -239,7 +270,8 @@ footer p {
 	padding-left: 0.2rem;
 }
 
-button {
+button,
+input[type='submit'] {
 	background-color: #1f4fc7;
 	color: white;
 	border-style: solid;
@@ -250,11 +282,13 @@ button {
 	cursor: pointer;
 }
 
-button:hover {
-	background-color: hsl(222, 70%, 44%);
+button:hover,
+input[type='submit']:hover {
+	background-color: hsl(223, 77%, 38%);
 }
 
-button:active {
+button:active,
+input[type='submit']:active {
 	background-color: rgb(18, 52, 127);
 }
 
@@ -266,20 +300,28 @@ footer {
 	letter-spacing: 0.5pt;
 }
 
+footer p {
+	font-style: italic;
+}
+
 /* On smaller screens, the layout switches to a single-column flow for readability. */
 @media screen and (max-width: 760px) {
 	body {
 		padding: 0.75rem;
 	}
 
-    header {
-        position: relative;
-    }
+	header {
+		position: relative;
+	}
 
 	header h2 {
 		display: block;
 		margin-right: 0;
 	}
+    
+    h2[id] {
+        scroll-margin-top: 1rem;
+    }
 
 	main {
 		width: 100%;
