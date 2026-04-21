@@ -93,6 +93,11 @@ main {
 	border-radius: 1rem;
 }
 
+/* Offset in-page anchors so sticky header does not cover the jumped-to heading. */
+h2[id] {
+	scroll-margin-top: 10rem;
+}
+
 #section-media {
 	background-color: #ccd2e2;
 }
@@ -180,7 +185,8 @@ button {
 	font-size: 11pt;
 }
 
-input:not([type='radio']):not([type='checkbox']),
+input[type='text'],
+input[type='date'],
 select,
 textarea {
 	width: 100%;
@@ -312,6 +318,10 @@ footer p {
 		display: block;
 		margin-right: 0;
 	}
+    
+    h2[id] {
+        scroll-margin-top: 1rem;
+    }
 
 	main {
 		width: 100%;
