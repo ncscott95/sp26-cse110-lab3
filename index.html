@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="icon" type="image/png" href="/images/favicon.png">
+        <link rel="stylesheet" href="/style.css">
     </head>
 
     <body>
@@ -119,8 +120,10 @@
                     <fieldset>
                         <legend>Meeting Feedback</legend>
 
-                        <label for="name">Your Name:</label>
-                        <input type="text" id="name" name="name" list="attendees"><br><br>
+                        <div class="form-row">
+                            <label for="name">Your Name:</label>
+                            <input type="text" id="name" name="name" list="attendees">
+                        </div>
 
                         <datalist id="attendees">
                             <option value="Jonathan R."></option>
@@ -132,38 +135,62 @@
                             <option value="Bree T."></option>
                         </datalist>
 
-                        <label for="rating">How would you rate this meeting?</label>
-                        <select id="rating" name="rating">
-                            <option value="5">Excellent</option>
-                            <option value="4">Good</option>
-                            <option value="3">Average</option>
-                            <option value="2">Poor</option>
-                            <option value="1">Very Poor</option>
-                        </select><br><br>
+                        <div class="form-row">
+                            <label for="rating">How would you rate this meeting?</label>
+                            <select id="rating" name="rating">
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Average</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                        </div>
 
-                        <label for="next-availability">Date of next availability:</label>
-                        <input type="date" id="next-availability" name="next-availability"><br><br>
+                        <div class="form-row">
+                            <label for="next-availability">Date of next availability:</label>
+                            <input type="date" id="next-availability" name="next-availability">
+                        </div>
 
-                        <p>Was the meeting length appropriate?</p>
-                        <input type="radio" id="length-good" name="meeting-length" value="good">
-                        <label for="length-good">Yes, it was just right.</label><br>
-                        <input type="radio" id="length-long" name="meeting-length" value="long">
-                        <label for="length-long">It was too long.</label><br>
-                        <input type="radio" id="length-short" name="meeting-length" value="short">
-                        <label for="length-short">It was too short.</label><br><br>
+                        <div class="form-group">
+                            <p class="form-group-title">Was the meeting length appropriate?</p>
+                            <label class="choice" for="length-good">
+                                <input type="radio" id="length-good" name="meeting-length" value="good">
+                                Yes, it was just right.
+                            </label>
+                            <label class="choice" for="length-long">
+                                <input type="radio" id="length-long" name="meeting-length" value="long">
+                                It was too long.
+                            </label>
+                            <label class="choice" for="length-short">
+                                <input type="radio" id="length-short" name="meeting-length" value="short">
+                                It was too short.
+                            </label>
+                        </div>
 
-                        <p>Which topics were most useful? (Check all that apply)</p>
-                        <input type="checkbox" id="topic-retro" name="useful-topics" value="retro">
-                        <label for="topic-retro">Sprint 0 Retro</label><br>
-                        <input type="checkbox" id="topic-planning" name="useful-topics" value="planning">
-                        <label for="topic-planning">Sprint 1 Planning</label><br>
-                        <input type="checkbox" id="topic-tasks" name="useful-topics" value="tasks">
-                        <label for="topic-tasks">Task Assignments</label><br><br>
+                        <div class="form-group">
+                            <p class="form-group-title">Which topics were most useful? (Check all that apply)</p>
+                            <label class="choice" for="topic-retro">
+                                <input type="checkbox" id="topic-retro" name="useful-topics" value="retro">
+                                Sprint 0 Retro
+                            </label>
+                            <label class="choice" for="topic-planning">
+                                <input type="checkbox" id="topic-planning" name="useful-topics" value="planning">
+                                Sprint 1 Planning
+                            </label>
+                            <label class="choice" for="topic-tasks">
+                                <input type="checkbox" id="topic-tasks" name="useful-topics" value="tasks">
+                                Task Assignments
+                            </label>
+                        </div>
 
-                        <label for="comments">Additional Comments:</label><br>
-                        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+                        <div class="form-row form-row-stack">
+                            <label for="comments">Additional Comments:</label>
+                            <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+                        </div>
 
-                        <button type="submit">Submit Feedback</button>
+                        <div class="form-actions">
+                            <button type="submit">Submit Feedback</button>
+                        </div>
                     </fieldset>
                 </form>
             </section>
